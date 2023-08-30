@@ -4,9 +4,5 @@ interface ContainerProps {
   children: ReactNode;
 }
 export const Container: FC<ContainerProps> = ({ children }) => {
-  return (
-    <div className="smd:px-[min(150px,calc(11vw_+_20px))] w-full max-w-[1440px] px-0">
-      {children}
-    </div>
-  );
+  return <div className="w-full max-w-[1180px] md:px-5">{children}</div>;
 };

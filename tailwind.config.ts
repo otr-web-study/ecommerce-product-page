@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import plugin from 'tailwindcss/plugin';
 import { nextui } from '@nextui-org/react';
 
 const config: Config = {
@@ -18,17 +19,26 @@ const config: Config = {
         orange: 'hsl(26, 100%, 55%)',
         'pale-orange': 'hsl(25, 100%, 94%)',
       },
-      screens: {
-        smd: '980px',
-      },
-      dropShadow: {
-        'sh-link': '1px 1px 0px rgba(0,0,0,0.2);',
-      },
       transitionProperty: {
-        'drop-shadow': '',
+        'text-shadow': 'text-shadow',
+        fill: 'fill',
+      },
+      borderRadius: {
+        radii: '10px',
+        'radii-4': '4px',
       },
     },
   },
-  plugins: [nextui()],
+  plugins: [
+    nextui(),
+    plugin(function ({ addUtilities, addVariant }) {
+      addUtilities({
+        '.link-shadow': {
+          'text-shadow': '1px 1px 0px rgba(0,0,0,0.2)',
+        },
+      });
+      addVariant('child', '& > *');
+    }),
+  ],
 };
 export default config;
