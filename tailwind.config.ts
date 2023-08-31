@@ -11,7 +11,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {},
+      backgroundImage: {
+        'home-bg':
+          'linear-gradient(252deg, #69707D -9.94%, #A3A1A4 16.2%, #FFEDE0 61.54%, #FFEDE0 100%)',
+      },
       colors: {
         background: 'hsl(0, 0%, 100%)',
         foreground: 'hsl(0, 0%, 0%)',
@@ -26,6 +29,9 @@ const config: Config = {
       borderRadius: {
         radii: '10px',
         'radii-4': '4px',
+      },
+      boxShadow: {
+        'sh-cart': '0px 23px 35px 0px rgba(0, 0, 0, 0.10), 0px -1px 10px rgba(0,0,0,0.05)',
       },
     },
   },

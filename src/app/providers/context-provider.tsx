@@ -16,7 +16,7 @@ export function ContextProvider({ children }: { children: React.ReactNode }) {
   ]);
   const [totalCount, setTotalCount] = useState(1);
 
-  const getTotalCount = () => cart.reduce((acc, item) => acc + item.count, 0);
+  const getTotalCount = (curCart: CartItem[]) => curCart.reduce((acc, item) => acc + item.count, 0);
 
   const addItem = (product: Product, count: number) => {
     if (cart.findIndex((p) => p.name === product.name) < 0) {
@@ -43,12 +43,13 @@ export function ContextProvider({ children }: { children: React.ReactNode }) {
         ),
       );
     }
-    setTotalCount(getTotalCount);
+    setTotalCount(getTotalCount(cart));
   };
 
   const deleteItem = (productName: string) => {
-    setCart(cart.filter((item) => item.name !== productName));
-    setTotalCount(getTotalCount);
+    const newCart = cart.filter((item) => item.name !== productName);
+    setCart(newCart);
+    setTotalCount(getTotalCount(newCart));
   };
 
   const clearCart = () => {
