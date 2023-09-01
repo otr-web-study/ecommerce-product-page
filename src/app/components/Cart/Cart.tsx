@@ -57,7 +57,7 @@ export const Cart: FC<CartProps> = ({ onCloseCart }) => {
   return (
     <div className="flex w-full max-w-[360px] flex-col rounded-radii">
       <div className="flex min-h-[69px] items-center border-b border-b-black/10 px-6">
-        <h3 className="text-[15px] font-bold">Cart</h3>
+        <h3 className="text-very-dark-blue text-[15px] font-bold">Cart</h3>
       </div>
       {content}
     </div>

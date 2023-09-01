@@ -17,12 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className={`${kumbh.className} bg-background leading-normal text-foreground light`}>
         <UIProvider>
-          <ContextProvider>
-            <div className="flex min-h-screen flex-col items-center overflow-hidden">
-              <Header />
-              {children}
-            </div>
-          </ContextProvider>
+          <ContextProvider>{children}</ContextProvider>
         </UIProvider>
       </body>
     </html>

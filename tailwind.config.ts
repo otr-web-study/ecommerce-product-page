@@ -20,10 +20,14 @@ const config: Config = {
         foreground: 'hsl(0, 0%, 0%)',
         overlay: 'rgba(0, 0, 0, 0.7)',
         orange: 'hsl(26, 100%, 55%)',
+        'rusty-orange': 'hsl(26, 89%, 44%)',
         'pale-orange': 'hsl(25, 100%, 94%)',
+        'very-dark-blue': 'hsl(220, 13%, 13%)',
+        'dark-grayish-blue': 'hsl(219, 9%, 45%)',
+        'grayish-blue': 'hsl(220, 14%, 75%)',
+        'light-grayish-blue': 'hsl(223, 64%, 98%)',
       },
       transitionProperty: {
-        'text-shadow': 'text-shadow',
         fill: 'fill',
       },
       borderRadius: {
@@ -39,8 +43,11 @@ const config: Config = {
     nextui(),
     plugin(function ({ addUtilities, addVariant }) {
       addUtilities({
-        '.link-shadow': {
-          'text-shadow': '1px 1px 0px rgba(0,0,0,0.2)',
+        '.text-shadow-md': {
+          'text-shadow': '10px 6px 5px rgba(105, 112, 125, 1)',
+        },
+        '.text-shadow': {
+          'text-shadow': '5px 4px 5px rgba(105, 112, 125, 1)',
         },
       });
       addVariant('child', '& > *');

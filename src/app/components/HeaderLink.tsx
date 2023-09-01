@@ -10,7 +10,7 @@ export const HeaderLink: FC<HeaderLinkProps> = ({ href, children, onClick }) => 
   return (
     <Link
       href={href}
-      className="transition-text-shadow duration-250 hover:link-shadow"
+      className="md:text-grayish-blue md:hover:text-very-dark-blue text-inherit transition-[color] duration-250"
       onClick={onClick}
     >
       {children}

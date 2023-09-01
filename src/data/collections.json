@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Women's collection",
+    "description": "For elegant women",
+    "image": "/assets/images/image-product-1.jpg",
+    "href": "/women"
+  },
+  {
+    "id": 2,
+    "title": "Men's collection",
+    "description": "For brutal men",
+    "image": "/assets/images/image-product-3.jpg",
+    "href": "/men"
+  }
+]
