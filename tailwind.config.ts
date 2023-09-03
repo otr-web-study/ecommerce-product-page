@@ -33,6 +33,7 @@ const config: Config = {
       borderRadius: {
         radii: '10px',
         'radii-4': '4px',
+        'radii-5': '5px',
       },
       boxShadow: {
         'sh-cart': '0px 23px 35px 0px rgba(0, 0, 0, 0.10), 0px -1px 10px rgba(0,0,0,0.05)',

@@ -17,7 +17,7 @@ export const Cart: FC<CartProps> = ({ onCloseCart }) => {
         {cart.map((item) => (
           <div key={item.name} className="flex gap-4">
             <Image
-              src={item.images[0]}
+              src={item.images[0].thumbnail}
               alt={item.name}
               width={50}
               height={50}
@@ -26,11 +26,11 @@ export const Cart: FC<CartProps> = ({ onCloseCart }) => {
             <div className="flex flex-grow flex-col gap-[6px]">
               <h4 className="text-base">{item.name}</h4>
               <p className="text-base tracking-[0.32.px]">
-                {`$${formatPrice(item.discountedPrice)} x ${item.count} `}
+                {`${formatPrice(item.discountedPrice)} x ${item.count} `}
 
-                <span className="text-base font-bold tracking-[0.32.px]">{`$${formatPrice(
-                  item.sum,
-                )}`}</span>
+                <span className="text-base font-bold tracking-[0.32.px]">
+                  {formatPrice(item.sum)}
+                </span>
               </p>
             </div>
             <button onClick={() => deleteItem(item.name)} className="group">
@@ -57,7 +57,7 @@ export const Cart: FC<CartProps> = ({ onCloseCart }) => {
   return (
     <div className="flex w-full max-w-[360px] flex-col rounded-radii">
       <div className="flex min-h-[69px] items-center border-b border-b-black/10 px-6">
-        <h3 className="text-very-dark-blue text-[15px] font-bold">Cart</h3>
+        <h3 className="text-[15px] font-bold text-very-dark-blue">Cart</h3>
       </div>
       {content}
     </div>

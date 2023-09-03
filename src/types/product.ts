@@ -1,3 +1,8 @@
+interface ProductImage {
+  link: string;
+  thumbnail: string;
+}
+
 export interface Product {
   manufacturer: string;
   name: string;
@@ -5,5 +10,5 @@ export interface Product {
   price: number;
   discount: number;
   discountedPrice: number;
-  images: string[];
+  images: ProductImage[];
 }

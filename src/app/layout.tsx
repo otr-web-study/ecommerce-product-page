@@ -3,7 +3,6 @@ import { Kumbh_Sans } from 'next/font/google';
 import './globals.css';
 import { UIProvider } from './providers/ui-provider';
 import { ContextProvider } from './providers/context-provider';
-import { Header } from './components/Header';
 
 const kumbh = Kumbh_Sans({ subsets: ['latin'], weight: ['400', '700'], display: 'swap' });
 

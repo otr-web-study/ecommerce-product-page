@@ -5,16 +5,8 @@ import { type CartItem } from '@/types/cart';
 import { type Product } from '@/types/product';
 
 export function ContextProvider({ children }: { children: React.ReactNode }) {
-  const [cart, setCart] = useState<CartItem[]>([
-    {
-      name: 'test',
-      discountedPrice: 300,
-      count: 1,
-      sum: 300,
-      images: ['/assets/images/image-product-1.jpg'],
-    },
-  ]);
-  const [totalCount, setTotalCount] = useState(1);
+  const [cart, setCart] = useState<CartItem[]>([]);
+  const [totalCount, setTotalCount] = useState(0);
 
   const getTotalCount = (curCart: CartItem[]) => curCart.reduce((acc, item) => acc + item.count, 0);
 

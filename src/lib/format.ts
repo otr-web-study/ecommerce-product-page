@@ -1,1 +1,5 @@
-export const formatPrice = new Intl.NumberFormat('ru', { minimumFractionDigits: 2 }).format;
+export const formatPrice = new Intl.NumberFormat('en', {
+  minimumFractionDigits: 2,
+  style: 'currency',
+  currency: 'USD',
+}).format;
