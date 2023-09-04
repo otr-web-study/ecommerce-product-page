@@ -15,7 +15,7 @@ export const Cart: FC<CartProps> = ({ onCloseCart }) => {
     <>
       <div className="mt-6 flex flex-col gap-2 px-6">
         {cart.map((item) => (
-          <div key={item.name} className="flex gap-4">
+          <div key={item.name} className="flex items-center gap-4">
             <Image
               src={item.images[0].thumbnail}
               alt={item.name}

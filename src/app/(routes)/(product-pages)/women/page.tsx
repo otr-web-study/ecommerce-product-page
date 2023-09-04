@@ -1,5 +1,8 @@
-import { ProductPage } from '../components/ProductPage/ProductPage';
+import { Slider } from '../components/Slider';
+import { getProduct } from '@/lib/getProduct';
 
 export default function Women() {
-  return <ProductPage />;
+  const product = getProduct();
+
+  return <Slider images={product.images} route="/women/" id="4" />;
 }

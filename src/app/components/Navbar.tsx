@@ -28,7 +28,7 @@ export const Navbar: FC<NavbarProps> = ({ type = 'menu', onLinkClick }) => {
       ? 'gap-[min(32px,3vw)] text-[15px]'
       : 'flex-col text-[17px] font-bold tracking-[0.51px] gap-[17px]';
   const liClass = (href: string) =>
-    type === 'menu' ? '' : `hover:text-orange ${currentRoute === href ? 'text-orange' : ''}`;
+    type === 'menu' ? '' : `hover:text-orange ${currentRoute.includes(href) ? 'text-orange' : ''}`;
 
   return (
     <nav className={navClass}>
@@ -38,7 +38,7 @@ export const Navbar: FC<NavbarProps> = ({ type = 'menu', onLinkClick }) => {
             <HeaderLink href={href} onClick={onLinkClick}>
               {title}
             </HeaderLink>
-            {currentRoute === href && type === 'menu' ? (
+            {currentRoute.includes(href) && type === 'menu' ? (
               <motion.span
                 layoutId="active"
                 className="absolute -bottom-[45px] left-0 right-0 h-1 bg-orange "

@@ -1,6 +1,7 @@
+import { type FC } from 'react';
 import { getProduct } from '@/lib/getProduct';
 import { formatPrice } from '@/lib/format';
-import { ProductControls } from '../ProductControls';
+import { ProductControls } from './ProductControls/ProductControls';
 
 export const ProductPage = () => {
   const product = getProduct();
@@ -20,7 +21,7 @@ export const ProductPage = () => {
       <div className="mb-7 mt-[30px] flex justify-between gap-[10px] md:mb-[34px] md:flex-col">
         <span className="flex text-[30px] font-bold leading-[26px] text-very-dark-blue">
           {formatPrice(discountedPrice)}{' '}
-          <span className="rounded-radii-5 ml-4 flex h-full items-center bg-pale-orange px-[10px] text-[16px] font-bold">{`${discount}%`}</span>
+          <span className="ml-4 flex h-full items-center rounded-radii-5 bg-pale-orange px-[10px] text-[16px] font-bold">{`${discount}%`}</span>
         </span>
         <span className="font-bold tracking-[0.48px] text-very-dark-blue line-through">
           {formatPrice(price)}
