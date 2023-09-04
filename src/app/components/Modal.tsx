@@ -2,7 +2,11 @@
 import { useCallback, useRef, useEffect, MouseEventHandler } from 'react';
 import { useRouter } from 'next/navigation';
 
-export default function Modal({ children }: { children: React.ReactNode }) {
+interface ModalProps {
+  children: React.ReactNode;
+}
+
+export default function Modal({ children }: ModalProps) {
   const overlay = useRef(null);
   const wrapper = useRef(null);
   const router = useRouter();
@@ -20,26 +24,23 @@ export default function Modal({ children }: { children: React.ReactNode }) {
     [onDismiss, overlay, wrapper],
   );
 
-  const onKeyDown = useCallback(
-    (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onDismiss();
-    },
-    [onDismiss],
-  );
-
   useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') onDismiss();
+    };
+
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  }, [onKeyDown]);
+  }, [onDismiss]);
 
   return (
     <div
       ref={overlay}
-      className="fixed bottom-0 left-0 right-0 top-0 z-20 grid place-items-center"
+      className="fixed bottom-0 left-0 right-0 top-0 z-20 grid place-items-center bg-black/75"
       onClick={onClick}
     >
       <div ref={wrapper} className="relative">
-        tst
+        {children}
       </div>
     </div>
   );
