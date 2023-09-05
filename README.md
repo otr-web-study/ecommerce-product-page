@@ -19,8 +19,8 @@ Users should be able to:
 
 ### Links
 
-- [Solution] ()
-- [Live Site] ()
+- [Solution] (https://www.frontendmentor.io/solutions/ecommerce-product-page-Pi4H6id_DX)
+- [Live Site] (https://fm-ecommerce-product-page-delta.vercel.app/)
 
 ### Built with
 
