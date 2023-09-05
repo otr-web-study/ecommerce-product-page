@@ -29,6 +29,7 @@ const config: Config = {
       },
       transitionProperty: {
         fill: 'fill',
+        stroke: 'stroke',
       },
       borderRadius: {
         radii: '10px',

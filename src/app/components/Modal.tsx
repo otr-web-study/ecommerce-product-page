@@ -1,6 +1,7 @@
 'use client';
 import { useCallback, useRef, useEffect, MouseEventHandler } from 'react';
 import { useRouter } from 'next/navigation';
+import { CloseIcon } from './icons/CloseIcon';
 
 interface ModalProps {
   children: React.ReactNode;
@@ -40,6 +41,10 @@ export default function Modal({ children }: ModalProps) {
       onClick={onClick}
     >
       <div ref={wrapper} className="relative">
+        <button className="absolute -top-10 right-0" onClick={onDismiss}>
+          <CloseIcon className="transition-color h-8 w-8 text-white duration-250 hover:text-orange" />
+          <span className="sr-only">close</span>
+        </button>
         {children}
       </div>
     </div>
